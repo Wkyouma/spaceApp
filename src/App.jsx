@@ -39,7 +39,7 @@ function App() {
           <BarraLateral />
           <ConteudoGaleria>
             <Banner
-              texto="A galeria mais completa de fotos do espaço!"
+              texto="A galeria mais completa de fotos do espaço! 8=D"
               backgroundImage={bannerBackground}
             />
             <Galeria />
