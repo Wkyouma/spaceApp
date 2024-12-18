@@ -1,11 +1,49 @@
+import styled from "styled-components"
+
 import TituloEstilizado from "../Titulo"
+import Fotos from './fotosPop.json'
+const Imagem = styled.img`
+ max-width: 212px;
+ border-radius: 20px;
+
+`
+
+const ContainerPop = styled.section`
+    margin: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+`
+
+
+const embaralharFotos = (fotos) => {
+    return fotos
+        .map((foto) => ({ ...foto, ordem: Math.random() })) 
+        .sort((a, b) => a.ordem - b.ordem) 
+        .map(({ ordem, ...foto }) => foto); 
+};
 
 const Populares = () => {
-    return (
-       <TituloEstilizado $alinhamento="center">
-        Populares
-       </TituloEstilizado>
-    )
-}
+    // Fotos embaralhadas
+    const fotosRandomizadas = embaralharFotos(Fotos);
 
-export default Populares
+    return (
+        <>
+            <ContainerPop>
+                <TituloEstilizado $alinhamento="center">
+                    Populares
+                </TituloEstilizado>
+            
+                {fotosRandomizadas.map((foto) => (
+                    <Imagem 
+                        key={foto.id} 
+                        src={foto.path} 
+                        alt={foto.titulo} 
+                    />
+                ))}
+            </ContainerPop>
+        </>
+    );
+};
+
+export default Populares;

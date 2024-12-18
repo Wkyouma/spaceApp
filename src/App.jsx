@@ -1,10 +1,15 @@
 import { styled } from "styled-components"
+import { useState } from "react"
 import EstilosGlobais from "./componentes/EstilosGlobais"
 import Cabecalho from "./componentes/Cabecalho"
 import BarraLateral from "./componentes/BarraLateral"
 import Banner from "./componentes/Banner"
 import bannerBackground from './assets/banner.png'
 import Galeria from "./componentes/Galeria"
+import fotos from './componentes/fotos.json'
+import Modal from "./componentes/Modal"
+
+
 
 const FundoGradiente = styled.div`
   background: linear-gradient(174.61deg, #041833 4.16%, #04244F 48%, #154580 96.76%);
@@ -27,7 +32,9 @@ display:flex;
 flex-direction:column;
 flex-grow:1;`
 
-function App() {
+const App = () => {
+  const [fotoSelecionada, setfotoSelecionada]=useState(null)
+  const [fotosDaGaleria, setFotosDaGaleria] = useState(fotos)
 
 
   return (
@@ -42,11 +49,13 @@ function App() {
               texto="A galeria mais completa de fotos do espaço!"
               backgroundImage={bannerBackground}
             />
-            <Galeria />
+            <Galeria aoFotoSelecionada={foto=> setfotoSelecionada(foto)} fotos={fotosDaGaleria} />
+
           </ConteudoGaleria>
 
         </MainContainer>
       </AppContainer>
+      <Modal foto={fotoSelecionada}></Modal>
 
     </FundoGradiente>
   )
