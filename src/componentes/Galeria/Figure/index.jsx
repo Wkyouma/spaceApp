@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import BotaoIcone from "../../BotaoIcone"
+import BotaoIcone from "../../botaoIcone"
 
 const Figure = styled.figure`
    width: ${props => props.$expandida ? '90%' : '460px'};

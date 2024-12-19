@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import Figure from '../Galeria/Figure'
-import BotaoIcone from '../BotaoIcone'
+import Figure from '../galeria/Figure'
+import BotaoIcone from '../botaoIcone'
 
 const Divs = styled.div`
 background-color: rgba(0,0,0,0.7);
