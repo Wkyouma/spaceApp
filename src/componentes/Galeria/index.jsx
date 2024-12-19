@@ -20,11 +20,11 @@ flex-wrap: wrap;
 
 
 
-const Galeria = ({ fotos = [], aoFotoSelecionada, aoAlternarFavorito }) => {
+const Galeria = ({ fotos = [], setTag ,aoFotoSelecionada, aoAlternarFavorito }) => {
     return (
         <>
 
-            <Tags />
+            <Tags setTag={setTag}/>
             <GaleriaContainer>
                 <Secao>
                     <TituloEstilizado>Navegue pela nossa galeria</TituloEstilizado>

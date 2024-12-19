@@ -1,5 +1,5 @@
 import { styled } from "styled-components"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import EstilosGlobais from "./componentes/EstilosGlobais"
 import Cabecalho from "./componentes/Cabecalho"
 import BarraLateral from "./componentes/BarraLateral"
@@ -8,6 +8,7 @@ import bannerBackground from './assets/banner.png'
 import Galeria from "./componentes/Galeria"
 import fotos from './componentes/fotos.json'
 import Modal from "./componentes/Modal"
+import Footer from './componentes/Footer/index'
 
 
 
@@ -20,6 +21,7 @@ const AppContainer = styled.div`
 width: 1440px;
 margin: 0 auto;
 max-width: 100%;
+margin-bottom: 2%;
 `
 
 const MainContainer = styled.main`
@@ -34,7 +36,20 @@ flex-grow:1;`
 
 const App = () => {
   const [fotoSelecionada, setfotoSelecionada]=useState(null)
+  const [filtro, setFiltro] = useState('')
+  const [tag, setTag] = useState(0)
   const [fotosDaGaleria, setFotosDaGaleria] = useState(fotos)
+
+  useEffect(() => {
+    const fotosFiltradas = fotos.filter(foto => {
+      const filtroPorTag = !tag || foto.tagId === tag;
+      const filtroPorTitulo = !filtro || foto.titulo.toLowerCase().includes(filtro.toLowerCase().trim());
+      return filtroPorTag && filtroPorTitulo;
+    });
+    setFotosDaGaleria(fotosFiltradas);
+  }, [filtro, tag]);
+
+  
   const aoAlternar = (foto) =>{
     if(foto.id === fotoSelecionada?.id){
       setfotoSelecionada({
@@ -50,12 +65,14 @@ const App = () => {
     }))
   }
 
+  
+
 
   return (
     <FundoGradiente>
       <EstilosGlobais />
       <AppContainer>
-        <Cabecalho />
+        <Cabecalho filtro={filtro} setFiltro={setFiltro}/>
         <MainContainer>
           <BarraLateral />
           <ConteudoGaleria>
@@ -63,14 +80,15 @@ const App = () => {
               texto="A galeria mais completa de fotos do espaço!"
               backgroundImage={bannerBackground}
             />
-            <Galeria aoFotoSelecionada={foto=> setfotoSelecionada(foto)} aoAlternarFavorito={aoAlternar} fotos={fotosDaGaleria} />
+            <Galeria aoFotoSelecionada={foto=> setfotoSelecionada(foto)} aoAlternarFavorito={aoAlternar} fotos={fotosDaGaleria} setTag={setTag} />
 
           </ConteudoGaleria>
 
         </MainContainer>
       </AppContainer>
+      <Footer/>
       <Modal foto={fotoSelecionada}  aoFechar={() => setfotoSelecionada(null)} aoAlternarFavorito={aoAlternar}></Modal>
-
+    
     </FundoGradiente>
   )
 }

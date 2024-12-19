@@ -25,15 +25,13 @@ border: 2px solid transparent;
 }
 `
 
-const Tags = () => {
+const Tags = ({setTag }) => {
 
 
   return (
     <ListaEstilizada>
       <h2>Busque por tags</h2>
-      {tags.map(tag => <ButtonStyled key={tag.id}>
-        {tag.titulo}
-      </ButtonStyled>)}
+      {tags.map(tag => <ButtonStyled  key={tag.id} onClick={() => setTag(tag.tag)}>{tag.titulo}</ButtonStyled>)}
     </ListaEstilizada>)
 }
 export default Tags

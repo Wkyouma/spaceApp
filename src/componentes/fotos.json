@@ -7,9 +7,9 @@
     "tagId": 2
   },
   {
-    "titulo": "Via Láctea",
+    "titulo": "Galáxia Catavento do Sul (M83/NGC 5236)",
     "fonte": "Alura Space",
-    "path": "./Imagens/galeria/foto-1.png",
+    "path": "./Imagens/galeria/foto-13.webp",
     "id": "2",
     "tagId": 2
   },
@@ -67,6 +67,37 @@
     "fonte": "Alura Space",
     "path": "/Imagens/galeria/foto-10.png",
     "id": "10",
+    "tagId": 1
+  },
+  {
+    "titulo": "Nascimento de uma supernova",
+    "fonte": "Alura Space",
+    "path": "/Imagens/galeria/foto-11.webp",
+    "id": "11",
+    "tagId": 1
+  }
+  ,
+  {
+    "titulo": "Galáxias espirais (NGC 1672)",
+    "fonte": "Alura Space",
+    "path": "/Imagens/galeria/foto-12.webp",
+    "id": "12",
+    "tagId": 1
+  }
+  ,
+  {
+    "titulo": "Júpiter",
+    "fonte": "Alura Space",
+    "path": "/Imagens/galeria/foto-14.webp",
+    "id": "13",
+    "tagId": 1
+  }
+  ,
+  {
+    "titulo": "Nebulosa de Órion (M42)",
+    "fonte": "Alura Space",
+    "path": "/Imagens/galeria/foto-15.webp",
+    "id": "14",
     "tagId": 1
   }
 ]

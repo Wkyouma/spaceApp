@@ -13,12 +13,12 @@ left: 0;
 `
 
 const Dialog = styled.dialog`
-border: none;
-background: transparent;
-  width: 956px;
+    border: none;
+    background: transparent;
+  width: 926px;
   position: absolute;
   top: 294px;
-  max-height:740px;
+  max-height:700px;
   form{
     button{
         position: absolute;
