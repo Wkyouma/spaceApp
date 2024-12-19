@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-import TituloEstilizado from "../titulo/index.jsx"
+import TituloEstilizado from "../Titulo/index.jsx"
 import Fotos from './fotosPop.json'
 const Imagem = styled.img`
  max-width: 212px;
