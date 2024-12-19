@@ -1,6 +1,6 @@
 import { styled } from "styled-components"
 import { useState, useEffect } from "react"
-import EstilosGlobais from "./componentes/EstilosGlobais"
+import EstilosGlobais from "./componentes/estilosGlobais"
 import Cabecalho from "./componentes/Cabecalho"
 import BarraLateral from "./componentes/BarraLateral"
 import Banner from "./componentes/Banner"
