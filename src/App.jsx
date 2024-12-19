@@ -3,12 +3,12 @@ import { useState, useEffect } from "react"
 import EstilosGlobais from "./componentes/estilosGlobais/index.jsx"
 import Cabecalho from "./componentes/cabecalho/index.jsx"
 import BarraLateral from "./componentes/BarraLateral/index.jsx"
-import Banner from "./componentes/banner/index.jsx"
+import Banner from "./componentes/Banner/index.jsx"
 import bannerBackground from './assets/banner.png'
-import Galeria from "./componentes/galeria/index.jsx"
+import Galeria from "./componentes/Galeria/index.jsx"
 import fotos from './componentes/fotos.json'
-import Modal from "./componentes/modal/index.jsx"
-import Footer from './componentes/footer/index.jsx'
+import Modal from "./componentes/Modal/index.jsx"
+import Footer from './componentes/Footer/index.jsx'
 
 
 
