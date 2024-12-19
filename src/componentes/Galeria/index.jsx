@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import Tags from './tags/index'
-import TituloEstilizado from './titulo'
-import Populares from './populares'
-import Figure from './figure'
+import TituloEstilizado from './Titulo'
+import Populares from './Populares'
+import Figure from './Figure'
 
 const GaleriaContainer = styled.section`
 display:flex;`
