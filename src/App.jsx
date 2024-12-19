@@ -2,7 +2,7 @@ import { styled } from "styled-components"
 import { useState, useEffect } from "react"
 import EstilosGlobais from "./componentes/estilosGlobais/index.jsx"
 import Cabecalho from "./componentes/cabecalho/index.jsx"
-import BarraLateral from "./componentes/barralateral/index.jsx"
+import BarraLateral from "./componentes/barraLateral/index.jsx"
 import Banner from "./componentes/banner/index.jsx"
 import bannerBackground from './assets/banner.png'
 import Galeria from "./componentes/galeria/index.jsx"
