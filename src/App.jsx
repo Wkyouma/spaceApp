@@ -1,14 +1,14 @@
 import { styled } from "styled-components"
 import { useState, useEffect } from "react"
-import EstilosGlobais from "./componentes/estilosGlobais"
-import Cabecalho from "./componentes/cabecalho"
-import BarraLateral from "./componentes/barraLateral"
-import Banner from "./componentes/banner"
+import EstilosGlobais from "./componentes/estilosGlobais/index.jsx"
+import Cabecalho from "./componentes/cabecalho/index.jsx"
+import BarraLateral from "./componentes/barraLateral/index.jsx"
+import Banner from "./componentes/banner/index.jsx"
 import bannerBackground from './assets/banner.png'
-import Galeria from "./componentes/galeria"
+import Galeria from "./componentes/galeria/index.jsx"
 import fotos from './componentes/fotos.json'
-import Modal from "./componentes/modal"
-import Footer from './componentes/footer/index'
+import Modal from "./componentes/modal/index.jsx"
+import Footer from './componentes/footer/index.jsx'
 
 
 

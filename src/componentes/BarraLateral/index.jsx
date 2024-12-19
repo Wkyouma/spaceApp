@@ -1,5 +1,5 @@
 import { styled } from "styled-components"
-import ItemNavegacao from "./ItemNavegacao"
+import ItemNavegacao from "./itemNavegacao/index.jsx"
 
 const ListaEstilizada = styled.ul`
     list-style: none;
