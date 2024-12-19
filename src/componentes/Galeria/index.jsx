@@ -20,7 +20,7 @@ flex-wrap: wrap;
 
 
 
-const Galeria = ({ fotos = [], aoFotoSelecionada }) => {
+const Galeria = ({ fotos = [], aoFotoSelecionada, aoAlternarFavorito }) => {
     return (
         <>
 
@@ -29,8 +29,8 @@ const Galeria = ({ fotos = [], aoFotoSelecionada }) => {
                 <Secao>
                     <TituloEstilizado>Navegue pela nossa galeria</TituloEstilizado>
                     <ImagemContainer>
-                        {fotos.map(foto => <Figure aoZoomSolicitado={aoFotoSelecionada} key={foto.id}
-                            foto={foto}></Figure>)}
+                        {fotos.map(foto => <Figure aoZoomSolicitado={aoFotoSelecionada} aoAlternarFavorito={aoAlternarFavorito} key={foto.id}
+                            foto={foto} ></Figure>)}
                     </ImagemContainer>
                 </Secao>
                 <Populares />

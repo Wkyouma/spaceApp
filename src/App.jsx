@@ -35,6 +35,20 @@ flex-grow:1;`
 const App = () => {
   const [fotoSelecionada, setfotoSelecionada]=useState(null)
   const [fotosDaGaleria, setFotosDaGaleria] = useState(fotos)
+  const aoAlternar = (foto) =>{
+    if(foto.id === fotoSelecionada?.id){
+      setfotoSelecionada({
+        ...fotoSelecionada,
+        favorita:!fotoSelecionada.favorita
+      })
+    }
+    setFotosDaGaleria(fotosDaGaleria.map(fotosDaGaleria=>{
+      return{
+        ...fotosDaGaleria,
+        favorita:fotosDaGaleria.id === foto.id ? !foto.favorita : fotosDaGaleria.favorita
+      }
+    }))
+  }
 
 
   return (
@@ -49,13 +63,13 @@ const App = () => {
               texto="A galeria mais completa de fotos do espaço!"
               backgroundImage={bannerBackground}
             />
-            <Galeria aoFotoSelecionada={foto=> setfotoSelecionada(foto)} fotos={fotosDaGaleria} />
+            <Galeria aoFotoSelecionada={foto=> setfotoSelecionada(foto)} aoAlternarFavorito={aoAlternar} fotos={fotosDaGaleria} />
 
           </ConteudoGaleria>
 
         </MainContainer>
       </AppContainer>
-      <Modal foto={fotoSelecionada}></Modal>
+      <Modal foto={fotoSelecionada}  aoFechar={() => setfotoSelecionada(null)} aoAlternarFavorito={aoAlternar}></Modal>
 
     </FundoGradiente>
   )

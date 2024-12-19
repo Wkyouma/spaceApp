@@ -11,8 +11,10 @@ const Figure = styled.figure`
     & > img {
         max-width: 100%;
         border-radius: 20px 20px 0 0;
+        
     }
     figcaption {
+        
         background-color: #001634;
         border-radius: 0px 0px 20px 20px;
         color: white;
@@ -36,15 +38,16 @@ const Rodape = styled.footer`
     align-items: center;
 `
 
-const Imagem = ({ foto, expandida = false, aoZoomSolicitado }) => {
+const Imagem = ({ foto, expandida = false, aoZoomSolicitado, aoAlternarFavorito }) => {
+    const iconeFavorito = foto.favorita ? './Icones/favorito-ativo.png' : './Icones/favorito.png'
     return (<Figure $expandida={expandida} id={`foto-${foto.id}`}>
         <img src={foto.path} alt={foto.alt} />
         <figcaption>
             <h3>{foto.titulo}</h3>
             <Rodape>
                 <h4>{foto.fonte}</h4>
-                <BotaoIcone>
-                    <img src="/Icones/favorito.png" alt="Icone de favorito" />
+                <BotaoIcone onClick={()=>aoAlternarFavorito(foto)}>
+                    <img src={iconeFavorito} alt="Icone de favorito" />
                 </BotaoIcone>
                 {!expandida && <BotaoIcone aria-hidden={expandida}  onClick = { () => aoZoomSolicitado(foto)} >
                     <img src="/Icones/expandir.png" alt="Icone de expandir" />

@@ -5,6 +5,8 @@ import Fotos from './fotosPop.json'
 const Imagem = styled.img`
  max-width: 212px;
  border-radius: 20px;
+ height: 100%;
+ cursor: pointer;
 
 `
 
@@ -12,7 +14,8 @@ const ContainerPop = styled.section`
     margin: 24px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
+    
 `
 
 
@@ -23,7 +26,7 @@ const embaralharFotos = (fotos) => {
         .map(({ ordem, ...foto }) => foto); 
 };
 
-const Populares = () => {
+const Populares = (expandida = false, aoZoomSolicitado) => {
     // Fotos embaralhadas
     const fotosRandomizadas = embaralharFotos(Fotos);
 
@@ -35,13 +38,16 @@ const Populares = () => {
                 </TituloEstilizado>
             
                 {fotosRandomizadas.map((foto) => (
-                    <Imagem 
+                    <Imagem
+                  
                         key={foto.id} 
                         src={foto.path} 
                         alt={foto.titulo} 
+                        onClick={() => aoZoomSolicitado(foto)}
                     />
                 ))}
             </ContainerPop>
+            
         </>
     );
 };
